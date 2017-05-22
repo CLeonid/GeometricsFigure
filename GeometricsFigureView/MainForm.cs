@@ -11,7 +11,7 @@ namespace GeometricsFigureView
         /// <summary>
         /// 
         /// </summary>
-        private List<IFigure> _figures;
+        private static List<IFigure> _figures;
 
         public MainForm()
         {
@@ -71,7 +71,7 @@ namespace GeometricsFigureView
             iFigureBindingSource.Add(new GeometricsFigure.Rectangle(rnd.Next(1,30), rnd.Next(1,30)));
             int a = rnd.Next(1, 20);
             int b = rnd.Next(1, 20);
-            int c = rnd.Next(1, a + b);
+            int c = rnd.Next(a+b,a+b);
             iFigureBindingSource.Add(new Triangle(a, b, c));
             iFigureBindingSource.Add(new Square(rnd.Next(1, 20)));
             iFigureBindingSource.Add(new Circle(rnd.Next(1, 10)));

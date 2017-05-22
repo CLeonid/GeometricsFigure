@@ -163,39 +163,18 @@ namespace GeometricsFigureView
 
         private void ButtonOK_Click(object sender, EventArgs e)
         {
-            if (FigureComboBox.SelectedIndex == 0)
+            if (SideATextBox.TextLength == 0 || SideBTextBox.TextLength == 0 || SideCTextBox.TextLength == 0 
+                || RadiusTextBox.TextAlign==0 || SideDTextBox.TextAlign == 0)
             {
-                if (SideATextBox.TextLength == 0 || SideBTextBox.TextLength == 0)
-                {
-                    MessageBox.Show(@"Вы ввели не все стороны прямоугольника.", @"Ошибка!");
-                    return;
-                }
+                MessageBox.Show(@"Вы не ввели все данные.", @"Ошибка!");
+                return;
             }
-
-            else if (FigureComboBox.SelectedIndex == 1)
-            {
-                if (SideATextBox.TextLength == 0 || SideBTextBox.TextLength == 0 || SideCTextBox.TextLength == 0)
-                {
-                    MessageBox.Show(@"Вы ввели не все стороны треугольника.", @"Ошибка!");
-                    return;
-                }
-            }
-
-            else if (FigureComboBox.SelectedIndex == 3)
-            {
-                if (RadiusTextBox.TextLength == 0)
-                {
-                    MessageBox.Show(@"Вы не ввели радиус окружности.", @"Ошибка!");
-                    return;
-                }
-            }
-            else if (FigureComboBox.SelectedIndex == -1)
+            if (FigureComboBox.SelectedIndex == -1)
             {
                 DialogResult = DialogResult.Cancel;
                 Close();
                 return;
             }
-
             DialogResult = DialogResult.OK;
             Close();
         }

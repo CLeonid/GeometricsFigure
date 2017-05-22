@@ -62,7 +62,7 @@ namespace GeometricsFigure
         /// <param name="c">Сторона С</param>
         public void SetSides(double a, double b, double c)
         {
-            if ((a + c) <= b || (b + c) <= a || (a + b) <= c)
+            if ((a + c) < b || (b + c) < a || (a + b) < c )
             {
                 throw new ArgumentException("Неверно введены стороны треугольника");
             }
