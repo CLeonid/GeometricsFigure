@@ -8,7 +8,9 @@ namespace GeometricsFigureView
     public partial class AddForm : Form
     {
         private IFigure _figure;
-
+        /// <summary>
+        /// 
+        /// </summary>
         public IFigure Figure
         {
             get
